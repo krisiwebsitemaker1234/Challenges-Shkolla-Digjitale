@@ -32,5 +32,8 @@ export default function ProfileScreen() {
             fontWeight: '300',
             color: 'red',
             fontSize: '24px',  
+            display: flex,
+            width: 500,
+            textAlign: center,
         },
   })

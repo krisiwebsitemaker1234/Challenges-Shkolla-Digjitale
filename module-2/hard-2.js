@@ -53,6 +53,6 @@ export default function WeatherScreen() {
                 textDecoration: 'none',
                 color: 'blue',
                 fontSize: '15px',
-            },
-        }
+        }, 
+    }
     )
