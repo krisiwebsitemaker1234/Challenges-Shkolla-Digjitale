@@ -37,7 +37,6 @@ export default function Dashboard() {
 
   return (
     <View style={styles.container}>
-      {/* Navbar */}
       <View style={styles.navbar}>
         <View style={styles.navLeft}>
           <TouchableOpacity onPress={() => setSidebarOpen(!sidebarOpen)} style={styles.menuBtn}>
@@ -85,7 +84,6 @@ export default function Dashboard() {
       </View>
 
       <View style={styles.main}>
-        {/* Sidebar */}
         {sidebarOpen && (
           <View style={styles.sidebar}>
             <Text style={styles.sidebarTitle}>NAVIGATION</Text>
@@ -102,12 +100,10 @@ export default function Dashboard() {
           </View>
         )}
 
-        {/* Content */}
         <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
           <Text style={styles.welcome}>Welcome back, Kris</Text>
           <Text style={styles.subtitle}>Here's what's happening with your company today</Text>
 
-          {/* Stats Grid */}
           <View style={styles.statsGrid}>
             {stats.map((stat, idx) => (
               <View key={idx} style={styles.statCard}>
@@ -123,7 +119,6 @@ export default function Dashboard() {
             ))}
           </View>
 
-          {/* Recent Activity */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Recent Activity</Text>
             <View style={styles.activityCard}>
@@ -144,7 +139,6 @@ export default function Dashboard() {
             </View>
           </View>
 
-          {/* Team Stats */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Team Overview</Text>
             <View style={styles.teamGrid}>
