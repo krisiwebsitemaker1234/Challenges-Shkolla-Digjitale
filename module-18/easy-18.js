@@ -1,0 +1,69 @@
+//screens/Profile.js
+import React from 'react'
+import { View, Text } from 'react-native'
+
+export default function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile Page</Text>
+    </View>
+  )
+}
+
+//screens/Home.js
+import React from 'react'
+import { View, Text } from 'react-native'
+
+export default function Home() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home Page</Text>
+    </View>
+  )
+}
+
+//navigation/BottomTabNavigator.js
+import React from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import Icon from 'react-native-vector-icons/Ionicons'
+import Home from '../screens/Home'
+import Profile from '../screens/Profile'
+
+const Tab = createBottomTabNavigator()
+
+export default function BottomTabNavigator() {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          let iconName
+
+          if (route.name === 'Home') {
+            iconName = 'home'
+          } else if (route.name === 'Profile') {
+            iconName = 'person'
+          }
+
+          return <Icon name={iconName} size={size} color={color} />
+        }
+      })}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
+  )
+}
+
+//App.js
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import BottomTabNavigator from './navigation/BottomTabNavigator'
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
+  )
+}
+
